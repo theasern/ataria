@@ -11,10 +11,15 @@ namespace ataria
         static void Main(string[] args)
         {
             int mainin = 0;
+            int debugmain = 0;
         Main:
             Console.WriteLine("------------------------------------");
             Console.WriteLine("MARIANISTAS - Pagina del Alumno ");
-            Console.WriteLine("Debug: (" + mainin + ")");
+            if (debugmain == 1)
+            {
+                Console.WriteLine("Debug: (" + mainin + ")");
+            }
+
             Console.WriteLine("------------------------------------");
             Console.WriteLine();
             Console.WriteLine("     (1) Google[MENU]");
@@ -35,10 +40,23 @@ namespace ataria
                     System.Diagnostics.Process.Start("http://marias-gasteiz.educamos.com/");
                     break;
 
+                case 31415:
+                    debugmain = 1;
+                    break;
+                case 3:
+                    System.Diagnostics.Process.Start("https://webbook.burlingtonbooks.com/Login");
+                    break;
+                case 4:
+                    System.Diagnostics.Process.Start("https://es-login.smsavia.com/");
+                    break;
+                case 5:
+                    System.Diagnostics.Process.Start("shutdown", "/s /t 0");
+                    break;
+                case 6:
+                    Environment.Exit(1);
+                    break;
                 default:
-                    Console.WriteLine("");
-                    Console.WriteLine("Typed /" + mainin + "/");
-                    Console.WriteLine();
+                    //Default code (not made)
                     break;
             }
             Console.Clear();
