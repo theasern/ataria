@@ -1,4 +1,4 @@
-[[Travis-CI](https://travis-ci.org/theasern/ataria.svg?branch=master)](https://travis-ci.org/theasern/ataria)
+[![Build Status](https://travis-ci.org/theasern/ataria.svg?branch=master)](https://travis-ci.org/theasern/ataria)
 # Ataria 
 ---------------------------
 Open Source Student Hub
