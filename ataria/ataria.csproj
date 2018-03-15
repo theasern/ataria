@@ -7,7 +7,7 @@
     <ProjectGuid>{1D26DD09-6A95-4B65-A601-B3AC31F210FC}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ataria</RootNamespace>
-    <AssemblyName>ataria</AssemblyName>
+    <AssemblyName>main</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
