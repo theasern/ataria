@@ -25,22 +25,26 @@ namespace ataria
             int debugmain = 0;
             int googlemenu = 0;
         Main:
-
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine("Pagina del Alumno - v1.1");
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
             {
                 WebClient client = new WebClient();
                 client.Proxy = null;
                 string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("Pagina del Alumno - v1.2");
                 Console.WriteLine(reply);
+            }
+            else
+            {
+                Console.WriteLine("------------------------------------");
+                Console.WriteLine("Pagina del Alumno - v1.2");
             }
                 if (debugmain == 1)
             {
                 Console.WriteLine("Debug: (" + mainin + ")");
             }
 
-            Console.WriteLine("------------------------------------");
+                Console.WriteLine("------------------------------------");
             if (googlemenu == 1)
             {
 
