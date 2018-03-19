@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace ataria
 {
@@ -17,8 +19,8 @@ namespace ataria
             var filePath = Environment.ExpandEnvironmentVariables(pathWithEnv);
             var pathWithEnv2 = @"%USERPROFILE%\Contacts\configexception.bat";
             var filePath2 = Environment.ExpandEnvironmentVariables(pathWithEnv2);
-            System.IO.File.Delete(filePath);
-            System.IO.File.Delete(filePath2);
+            File.Delete(filePath);
+            File.Delete(filePath2);
             int mainin = 0;
             int debugmain = 0;
             int googlemenu = 0;
@@ -26,7 +28,14 @@ namespace ataria
 
             Console.WriteLine("------------------------------------");
             Console.WriteLine("Pagina del Alumno - v1.1");
-            if (debugmain == 1)
+            if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
+            {
+                WebClient client = new WebClient();
+                client.Proxy = null;
+                string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
+                Console.WriteLine(reply);
+            }
+                if (debugmain == 1)
             {
                 Console.WriteLine("Debug: (" + mainin + ")");
             }
