@@ -6,7 +6,7 @@ Open Source Student Hub
 Forked in C#
 
 A set of useful utilities for the student
+Suggest features in Issues Tab
 
 ### Download
 Download build: http://ataria.cf
-
