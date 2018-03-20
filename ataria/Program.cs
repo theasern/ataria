@@ -21,6 +21,7 @@ namespace ataria
             var filePath2 = Environment.ExpandEnvironmentVariables(pathWithEnv2);
             File.Delete(filePath);
             File.Delete(filePath2);
+            string mainout;
             int mainin = 0;
             int debugmain = 0;
             int googlemenu = 0;
@@ -31,13 +32,13 @@ namespace ataria
                 client.Proxy = null;
                 string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Pagina del Alumno - v1.2");
+                Console.WriteLine("Pagina del Alumno - v1.3");
                 Console.WriteLine(reply);
             }
             else
             {
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Pagina del Alumno - v1.2");
+                Console.WriteLine("Pagina del Alumno - v1.3");
             }
                 if (debugmain == 1)
             {
@@ -62,6 +63,8 @@ namespace ataria
                 Console.WriteLine("");
                 Console.WriteLine("     (6) Menu Principal");
                 Console.WriteLine("     (7) Salir");
+                Console.WriteLine("");
+                Console.WriteLine("     (help) Página de Ayuda");
             }
             else
             {
@@ -72,12 +75,45 @@ namespace ataria
                 Console.WriteLine("");
                 Console.WriteLine("     (5) Apagar Ordenador");
                 Console.WriteLine("     (6) Salir");
+                Console.WriteLine("");
+                Console.WriteLine("     (help) Página de Ayuda");
             }
 
             Console.WriteLine("");
             Console.WriteLine("Donde desea entrar? (1/2/3/4/5/6):");
-            mainin = Int32.Parse(Console.ReadLine());
-
+            mainout = Console.ReadLine();
+            if (Int32.TryParse(mainout, out mainin))
+            {
+            }
+            else
+            {
+                switch (mainout)
+                {
+                    case "github":
+                        System.Diagnostics.Process.Start("https://github.com/theasern/ataria");
+                        break;
+                    case "camara":
+                        System.Diagnostics.Process.Start("http://arllc.net/findipcam/");
+                        break;
+                    case "noticias":
+                        System.Diagnostics.Process.Start("https://files.000webhost.com/");
+                        break;
+                    case "help":
+                        System.Diagnostics.Process.Start("https://atariafiles.000webhostapp.com/help/");
+                        break;
+                    case "exit":
+                        Environment.Exit(1);
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Clear();
+                        goto Main;
+                        break;
+                }
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Clear();
+                goto Main;
+            }
             if (googlemenu == 1)
             {
                 switch (mainin)
@@ -118,6 +154,8 @@ namespace ataria
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Clear();
+                        goto Main;
                         break;
 
                 }
@@ -157,10 +195,13 @@ namespace ataria
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Clear();
+                        goto Main;
                         break;
 
                 }
             }
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Clear();
             goto Main;
         }
