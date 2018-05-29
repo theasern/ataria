@@ -51,7 +51,12 @@ namespace ataria
                     .FirstOrDefault();
             if (launcherfile == null)
             {
-                Console.WriteLine("Uninstall Failed, please contact an administrator");
+                Console.WriteLine("La desinstalación falló, consulta con un administrador");
+                Console.WriteLine("[PRESIONA CUALQUIER TECLA PARA CONTINUAR]");
+                Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Clear();
+                Program.MainProgram();
             }
             else
             {
@@ -64,7 +69,12 @@ namespace ataria
                     .FirstOrDefault();
             if (launcherfile2 == null)
             {
-                Console.WriteLine("Uninstall Failed, please contact an administrator");
+                Console.WriteLine("La desinstalación falló, consulta con un administrador");
+                Console.WriteLine("[PRESIONA CUALQUIER TECLA PARA CONTINUAR]");
+                Console.ReadLine();
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.Clear();
+                Program.MainProgram();
             }
             else
             {

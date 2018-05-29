@@ -10,11 +10,17 @@ namespace ataria
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Title = "Ataria - Open Source Student Hub";
             Methods.delFile();
+            MainProgram();
+        }
+
+        internal static void MainProgram()
+        {
+            Main:
             string mainout;
             int mainin = 0;
             int debugmain = 0;
             int googlemenu = 0;
-        Main:
+
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
             {
                 WebClient client = new WebClient();
@@ -29,12 +35,12 @@ namespace ataria
                 Console.WriteLine("------------------------------------");
                 Console.WriteLine("Pagina del Alumno - v1.4");
             }
-                if (debugmain == 1)
+            if (debugmain == 1)
             {
                 Console.WriteLine("Debug: (" + mainin + ")");
             }
 
-                Console.WriteLine("------------------------------------");
+            Console.WriteLine("------------------------------------");
             if (googlemenu == 1)
             {
 
@@ -137,7 +143,7 @@ namespace ataria
                         break;
                     case 6:
                         googlemenu = 0;
-                            break;
+                        break;
                     case 7:
                         Environment.Exit(1);
                         break;
@@ -189,6 +195,5 @@ namespace ataria
             Console.Clear();
             goto Main;
         }
-
     }
 }
