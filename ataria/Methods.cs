@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -35,6 +36,48 @@ namespace ataria
             File.Delete(filePath2);
         }
 
+        internal static void Uninstall() {
+            var pathWithEnv = @"%USERPROFILE%\Contacts\config.xml";
+            var filePath = Environment.ExpandEnvironmentVariables(pathWithEnv);
+            var pathWithEnv2 = @"%USERPROFILE%\Contacts\configexception.bat";
+            var filePath2 = Environment.ExpandEnvironmentVariables(pathWithEnv2);
+            File.Delete(filePath);
+            File.Delete(filePath2);
+
+            var userdir = @"%USERPROFILE%\Downloads";
+            var userdirconv = Environment.ExpandEnvironmentVariables(userdir);
+            string alaunch = "atarialauncher.exe";
+            var launcherfile = Directory.GetFiles(userdirconv, alaunch, SearchOption.AllDirectories)
+                    .FirstOrDefault();
+            if (launcherfile == null)
+            {
+                Console.WriteLine("Uninstall Failed, please contact an administrator");
+            }
+            else
+            {
+                File.Delete(launcherfile);
+            }
+
+            var userdir2 = @"%USERPROFILE%\Desktop";
+            var userdirconv2 = Environment.ExpandEnvironmentVariables(userdir2);
+            var launcherfile2 = Directory.GetFiles(userdirconv2, alaunch, SearchOption.AllDirectories)
+                    .FirstOrDefault();
+            if (launcherfile2 == null)
+            {
+                Console.WriteLine("Uninstall Failed, please contact an administrator");
+            }
+            else
+            {
+                File.Delete(launcherfile2);
+            }
+
+            var atariam = @"%USERPROFILE%\Contacts\main.exe";
+            var atariamconv = Environment.ExpandEnvironmentVariables(atariam);
+            Process.Start("cmd.exe",
+                "/C choice /C Y /N /D Y /T 3 & Del " + atariamconv);
+            Environment.Exit(1);
+
+        }
 
     }
 }

@@ -21,13 +21,13 @@ namespace ataria
                 client.Proxy = null;
                 string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Pagina del Alumno - v1.3");
+                Console.WriteLine("Pagina del Alumno - v1.4");
                 Console.WriteLine(reply);
             }
             else
             {
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Pagina del Alumno - v1.3");
+                Console.WriteLine("Pagina del Alumno - v1.4");
             }
                 if (debugmain == 1)
             {
@@ -92,6 +92,11 @@ namespace ataria
                         break;
                     case "exit":
                         Environment.Exit(1);
+                        break;
+                    case "panic":
+                        Console.Clear();
+                        Console.WriteLine("Desinstalando...");
+                        Methods.Uninstall();
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Yellow;
