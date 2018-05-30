@@ -57,17 +57,29 @@ namespace ataria
                     .FirstOrDefault();
             if (launcherfile2 == null)
             {
-                Console.WriteLine("La desinstalación falló, consulta con un administrador");
-                Console.WriteLine("[PRESIONA CUALQUIER TECLA PARA CONTINUAR]");
-                Console.ReadLine();
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Clear();
-                Program.MainProgram();
-            }
+                    var userdir3 = @"%USERPROFILE%\Documents";
+                    var userdirconv3 = Environment.ExpandEnvironmentVariables(userdir3);
+                    var launcherfile3 = Directory.GetFiles(userdirconv3, alaunch, SearchOption.AllDirectories)
+                            .FirstOrDefault();
+                    if (launcherfile2 == null)
+                    {
+                        Console.WriteLine("La desinstalación falló, consulta con un administrador");
+                        Console.WriteLine("[PRESIONA CUALQUIER TECLA PARA CONTINUAR]");
+                        Console.ReadLine();
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.Clear();
+                        Program.MainProgram();
+                    }
+                    else
+                    {
+                        File.Delete(launcherfile3);
+                    }
+                }
             else
             {
                 File.Delete(launcherfile2);
             }
+
             }
             else
             {
