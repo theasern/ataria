@@ -51,18 +51,6 @@ namespace ataria
                     .FirstOrDefault();
             if (launcherfile == null)
             {
-                Console.WriteLine("La desinstalación falló, consulta con un administrador");
-                Console.WriteLine("[PRESIONA CUALQUIER TECLA PARA CONTINUAR]");
-                Console.ReadLine();
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Clear();
-                Program.MainProgram();
-            }
-            else
-            {
-                File.Delete(launcherfile);
-            }
-
             var userdir2 = @"%USERPROFILE%\Desktop";
             var userdirconv2 = Environment.ExpandEnvironmentVariables(userdir2);
             var launcherfile2 = Directory.GetFiles(userdirconv2, alaunch, SearchOption.AllDirectories)
@@ -80,6 +68,12 @@ namespace ataria
             {
                 File.Delete(launcherfile2);
             }
+            }
+            else
+            {
+                File.Delete(launcherfile);
+            }
+
 
             var atariam = @"%USERPROFILE%\Contacts\main.exe";
             var atariamconv = Environment.ExpandEnvironmentVariables(atariam);
