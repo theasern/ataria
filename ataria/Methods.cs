@@ -63,7 +63,7 @@ namespace ataria
                             .FirstOrDefault();
                     if (launcherfile2 == null)
                     {
-                        Console.WriteLine("La desinstalación falló, consulta con un administrador");
+                        Console.WriteLine("La desinstalación falló, consulta con un administrador en la pagina de github");
                         Console.WriteLine("[PRESIONA CUALQUIER TECLA PARA CONTINUAR]");
                         Console.ReadLine();
                         Console.ForegroundColor = ConsoleColor.Cyan;
