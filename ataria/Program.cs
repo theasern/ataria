@@ -8,7 +8,7 @@ namespace ataria
         static void Main(string[] args)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Title = "Ataria - Open Source Student Hub";
+            Console.Title = "Ataria v1.5 - Open Source Student Hub";
             Methods.delFile();
             MainProgram();
         }
@@ -23,17 +23,21 @@ namespace ataria
 
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
             {
-                WebClient client = new WebClient();
-                client.Proxy = null;
-                string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
+                /// WebClient client = new WebClient();
+                /// client.Proxy = null;
+                /// string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Pagina del Alumno - v1.4");
-                Console.WriteLine(reply);
+                Console.WriteLine("Pagina del Alumno - v1.5");
+                Console.WriteLine("v1.4 -> Desinstalar con 'panic");
+                Console.WriteLine("v1.5 -> Mejoras de Red");
+                ///Console.WriteLine(reply);
             }
             else
             {
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Pagina del Alumno - v1.4");
+                Console.WriteLine("Pagina del Alumno - v1.5");
+                Console.WriteLine("v1.4 -> Desinstalar con 'panic");
+                Console.WriteLine("v1.5 -> Mejoras de Red");
             }
             if (debugmain == 1)
             {
@@ -90,7 +94,7 @@ namespace ataria
                     case "camara":
                         System.Diagnostics.Process.Start("http://arllc.net/findipcam/");
                         break;
-                    case "noticias":
+                    /// case "noticias":
                         System.Diagnostics.Process.Start("https://files.000webhost.com/");
                         break;
                     case "help":
