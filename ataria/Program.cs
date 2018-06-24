@@ -94,7 +94,7 @@ namespace ataria
                     case "camara":
                         System.Diagnostics.Process.Start("http://arllc.net/findipcam/");
                         break;
-                    /// case "noticias":
+                    case "noticias":
                         System.Diagnostics.Process.Start("https://files.000webhost.com/");
                         break;
                     case "help":
