@@ -29,7 +29,7 @@ namespace ataria
                 Console.WriteLine("------------------------------------");
                 Console.WriteLine("Pagina del Alumno - v1.5");
                 Console.WriteLine("v1.4 -> Desinstalar con 'panic");
-                Console.WriteLine("v1.5 -> Mejoras de Red");
+                Console.WriteLine("v1.5 -> Mejoras de Red y del Instalador");
                 ///Console.WriteLine(reply);
             }
             else
