@@ -27,16 +27,16 @@ namespace ataria
                 /// client.Proxy = null;
                 /// string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Pagina del Alumno - v1.5");
-                Console.WriteLine("v1.4 -> Desinstalar con 'panic");
+                Console.WriteLine("Pagina del Alumno - v1.5.1");
+                Console.WriteLine("v1.4 -> Desinstalar con 'panic' o 'desinstalar'");
                 Console.WriteLine("v1.5 -> Mejoras de Red y del Instalador");
                 ///Console.WriteLine(reply);
             }
             else
             {
                 Console.WriteLine("------------------------------------");
-                Console.WriteLine("Pagina del Alumno - v1.5");
-                Console.WriteLine("v1.4 -> Desinstalar con 'panic");
+                Console.WriteLine("Pagina del Alumno - v1.5.1");
+                Console.WriteLine("v1.4 -> Desinstalar con 'panic' o 'desinstalar'");
                 Console.WriteLine("v1.5 -> Mejoras de Red");
             }
             if (debugmain == 1)
@@ -106,6 +106,11 @@ namespace ataria
                     case "panic":
                         Console.Clear();
                         Console.WriteLine("Desinstalando...");
+                        Methods.Uninstall();
+                        break;
+                    case "desinstalar":
+                        Console.Clear();
+                        Console.WriteLine("Desinstalando");
                         Methods.Uninstall();
                         break;
                     default:
