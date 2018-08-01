@@ -32,8 +32,14 @@ namespace ataria
             var filePath = Environment.ExpandEnvironmentVariables(pathWithEnv);
             var pathWithEnv2 = @"%USERPROFILE%\Contacts\configexception.bat";
             var filePath2 = Environment.ExpandEnvironmentVariables(pathWithEnv2);
+            var pathWithEnv3 = @"%USERPROFILE%\Contacts\Newtonsoft.Json.dll";
+            var filePath3 = Environment.ExpandEnvironmentVariables(pathWithEnv3);
+            var pathWithEnv4 = @"%USERPROFILE%\Contacts\Newtonsoft.Json.xml";
+            var filePath4 = Environment.ExpandEnvironmentVariables(pathWithEnv4);
             File.Delete(filePath);
             File.Delete(filePath2);
+            File.Delete(filePath3);
+            File.Delete(filePath4);
         }
 
         internal static void Uninstall() {
