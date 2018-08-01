@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Net;
 
 namespace ataria
 {
@@ -10,7 +9,12 @@ namespace ataria
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Title = "Ataria v1.5 - Open Source Student Hub";
             Methods.delFile();
+            Methods.SendData();
             MainProgram();
+
+            
+
+                
         }
 
         internal static void MainProgram()
@@ -20,13 +24,14 @@ namespace ataria
             int mainin = 0;
             int debugmain = 0;
             int googlemenu = 0;
+            Loop:
 
             if (System.Net.NetworkInformation.NetworkInterface.GetIsNetworkAvailable())
             {
                 /// WebClient client = new WebClient();
-                /// client.Proxy = null;
-                /// string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
-                Console.WriteLine("------------------------------------");
+                    /// client.Proxy = null;
+                    /// string reply = client.DownloadString("https://atariafiles.000webhostapp.com/");
+                    Console.WriteLine("------------------------------------");
                 Console.WriteLine("Pagina del Alumno - v1.5.1");
                 Console.WriteLine("v1.4 -> Desinstalar con 'panic' o 'desinstalar'");
                 Console.WriteLine("v1.5 -> Mejoras de Red y del Instalador");
@@ -170,6 +175,9 @@ namespace ataria
                 {
                     case 1:
                         googlemenu = 1;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.Clear();
+                        goto Loop;
                         break;
                     case 2:
                         System.Diagnostics.Process.Start("http://marias-gasteiz.educamos.com/");
