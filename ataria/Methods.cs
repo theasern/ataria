@@ -95,29 +95,5 @@ namespace ataria
 
 
         }
-
-        internal static void SendData()
-        {
-                DateTime date = DateTime.Now;
-                string Date = date.ToString("yyyy:MM:dd");
-                string Time = date.ToString("HH:mm:ss");
-
-                var json = Newtonsoft.Json.JsonConvert.SerializeObject(new
-                {
-                    Name = "Login // Ataria.exe",
-                    Value = Time + " " + Date,
-
-                });
-
-                var request = WebRequest.CreateHttp("https://theasernapps.firebaseio.com/.json");
-                request.Method = "POST";
-                request.ContentType = "application/json";
-                var buffer = Encoding.UTF8.GetBytes(json);
-                request.ContentLength = buffer.Length;
-                request.GetRequestStream().Write(buffer, 0, buffer.Length);
-                var response = request.GetResponse();
-                json = (new StreamReader(response.GetResponseStream())).ReadToEnd();
-         
-        }
     }
 }
