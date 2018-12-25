@@ -101,5 +101,19 @@ namespace ataria
 
 
         }
+
+        internal static bool appOpen()
+        {
+            WebClient client = new WebClient();
+            string reply = client.DownloadString("https://atariafiles.000webhostapp.com/open/");
+            if (reply == "true")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }
