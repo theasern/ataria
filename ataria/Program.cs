@@ -8,12 +8,8 @@ namespace ataria
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Title = "Ataria v1.5 - Open Source Student Hub";
-            Methods.delFile();
-            Methods.SendData();
+            Methods.delFile();            
             MainProgram();
-
-            
-
                 
         }
 
